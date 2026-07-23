@@ -6,13 +6,16 @@ on:
   workflow_dispatch:  
 # Actions(s)
 jobs:
-  speak:
-    name: "say something"
-    runs-on: ubuntu-latest
+  qa:
+    name: "Quality Assurance"
+    runs-on: ubuntu-linux
     steps:
-      - name: "actually say something"
-        run: echo "Hi!"
-      - name: "demonstrate sequence"
-        run: echo "hello"
-      - name: "more commands"
-        run: ls -lah
+      - name: "Checkout Repository"
+        uses: actions/checkout@v7
+      - name: "Install python:
+        uses: actions/python@v7
+        with: '3.14'
+      - name: "Install libraries"
+        run: pip3 install -r requirements.txt
+      - name: "Run tests"
+        run: pytest
