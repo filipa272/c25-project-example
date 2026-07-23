@@ -1,0 +1,18 @@
+# Trigger
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  
+# Actions(s)
+jobs:
+  speak:
+    name: "say something"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "actually say something"
+        run: echo "Hi!"
+      - name: "demonstrate sequence"
+        run: echo "hello"
+      - name: "more commands"
+        run: ls -lah
