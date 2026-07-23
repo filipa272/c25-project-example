@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v7
       - name: "Install python:
         uses: actions/python@v7
-        with: '3.14'
+        with: 
+        python-version: '3.14'
       - name: "Install libraries"
         run: pip3 install -r requirements.txt
       - name: "Run tests"
